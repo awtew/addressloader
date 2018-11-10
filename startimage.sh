@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-su - postgres -c "postgres -D /var/postgresql/gnafdata"
+PGDATA=/var/lib/postgresql
+su - postgres -c "postgres -c listen_addresses='*' -D $PGDATA/gnafdatabase"
